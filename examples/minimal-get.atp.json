@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "name": "Minimal GET",
+  "requests": [
+    {
+      "name": "Get example",
+      "method": "GET",
+      "url": "https://httpbin.org/get",
+      "assertions": [{ "kind": "Status", "operator": "Equals", "expected": "200" }]
+    }
+  ]
+}

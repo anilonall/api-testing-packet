@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ApiTestingPacket.API/ApiTestingPacket.API.csproj" />
+    <Project Path="src/ApiTestingPacket.Cli/ApiTestingPacket.Cli.csproj" />
+    <Project Path="src/ApiTestingPacket.Core/ApiTestingPacket.Core.csproj" />
+    <Project Path="src/ApiTestingPacket.Repository/ApiTestingPacket.Repository.csproj" />
+    <Project Path="src/ApiTestingPacket.Service/ApiTestingPacket.Service.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ApiTestingPacket.IntegrationTests/ApiTestingPacket.IntegrationTests.csproj" />
+    <Project Path="tests/ApiTestingPacket.UnitTests/ApiTestingPacket.UnitTests.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "HTTPBin workflow",
+  "environments": [
+    {
+      "name": "demo",
+      "variables": {
+        "baseUrl": "https://httpbin.org",
+        "demoEmail": "developer@example.com"
+      },
+      "secrets": []
+    }
+  ],
+  "requests": [
+    {
+      "name": "Health check",
+      "method": "GET",
+      "url": "{{baseUrl}}/get",
+      "assertions": [
+        { "kind": "Status", "operator": "Equals", "expected": "200", "name": "Returns HTTP 200" },
+        { "kind": "JsonType", "operator": "Equals", "path": "headers", "expected": "object", "name": "Headers are present" }
+      ]
+    },
+    {
+      "name": "Create session",
+      "method": "POST",
+      "url": "{{baseUrl}}/anything/session",
+      "headers": [{ "name": "Accept", "value": "application/json" }],
+      "body": { "kind": "Json", "content": "{\"email\":\"{{demoEmail}}\",\"accessToken\":\"demo-token\"}" },
+      "assertions": [
+        { "kind": "Status", "operator": "Equals", "expected": "200" },
+        { "kind": "Format", "operator": "Equals", "path": "json.email", "expected": "email" }
+      ],
+      "extractions": [{ "variable": "token", "source": "json", "path": "json.accessToken", "secret": true }]
+    },
+    {
+      "name": "Authenticated profile",
+      "method": "GET",
+      "url": "{{baseUrl}}/bearer",
+      "auth": { "kind": "Bearer", "token": "{{token}}" },
+      "assertions": [
+        { "kind": "Status", "operator": "Equals", "expected": "200" },
+        { "kind": "JsonValue", "operator": "Equals", "path": "authenticated", "expected": "true" }
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "Session lifecycle",
+      "stopOnFailure": true,
+      "steps": [
+        { "name": "Create session", "request": { "name": "Create session", "method": "POST", "url": "{{baseUrl}}/anything/session", "body": { "kind": "Json", "content": "{\"email\":\"{{demoEmail}}\",\"accessToken\":\"demo-token\"}" }, "assertions": [{ "kind": "Status", "operator": "Equals", "expected": "200" }], "extractions": [{ "variable": "token", "source": "json", "path": "json.accessToken", "secret": true }] } },
+        { "name": "Authenticated profile", "request": { "name": "Authenticated profile", "method": "GET", "url": "{{baseUrl}}/bearer", "auth": { "kind": "Bearer", "token": "{{token}}" }, "assertions": [{ "kind": "Status", "operator": "Equals", "expected": "200" }, { "kind": "JsonValue", "operator": "Equals", "path": "authenticated", "expected": "true" }] } }
+      ]
+    }
+  ]
+}

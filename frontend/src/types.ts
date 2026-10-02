@@ -1,0 +1,11 @@
+export type User = { id: string; email: string; displayName: string }
+export type AuthResponse = { accessToken: string; accessTokenExpiresAt: string; user: User }
+export type CollectionSummary = { id: string; name: string; description: string; requestCount: number; updatedAt: string }
+export type SavedRequest = { id: string; folderId?: string; name: string; method: string; url: string; definitionJson: string; updatedAt: string }
+export type CollectionDetail = CollectionSummary & { requests: SavedRequest[]; folders: { id: string; parentId?: string; name: string }[] }
+export type Environment = { id: string; name: string; updatedAt: string }
+export type Execution = { id: string; requestName: string; method: string; safeUrl: string; statusCode?: number; durationMs: number; passed: boolean; createdAt: string }
+export type ExecutionPage = { items: Execution[]; total: number; page: number; pageSize: number }
+export type Dashboard = { collections: number; requests: number; executions: number; passed: number; failed: number; averageDurationMs: number; recent: Execution[] }
+export type AssertionResult = { name: string; passed: boolean; expected?: string; actual?: string; error?: string }
+export type ExecutionResult = { requestName: string; method: string; url: string; status?: number; durationMs: number; responseSize: number; responseHeaders: Record<string, string[]>; body?: string; contentType?: string; assertions: AssertionResult[]; error?: string; passed: boolean }

@@ -1,0 +1,11 @@
+name: Feature request
+description: Propose a focused product improvement
+body:
+  - type: textarea
+    attributes: { label: Problem, description: What workflow is difficult today? }
+    validations: { required: true }
+  - type: textarea
+    attributes: { label: Proposed behavior }
+    validations: { required: true }
+  - type: textarea
+    attributes: { label: Alternatives and tradeoffs }
