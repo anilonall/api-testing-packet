@@ -1,3 +1,5 @@
+<p align="center"><img src="frontend/public/branding/logo.svg" alt="API Testing Packet" width="430"></p>
+
 # API Testing Packet
 
 API Testing Packet is a self-hosted API workbench for building HTTP requests, chaining response values, checking assertions, running ordered scenarios, and executing the same versioned packets in CI. It combines a focused React developer interface with a .NET execution engine shared by the web API and CLI.
@@ -169,6 +171,10 @@ examples/   versioned test packets
 - Redirects are disabled rather than revalidated hop-by-hop.
 - HTML reporting is not included; console, JSON, and JUnit are supported.
 - Secret environment values are masked conceptually and excluded from exports, but at-rest application-level encryption is not included; secure the PostgreSQL volume and deployment.
+
+## Branding
+
+The original packet-and-terminal logo is included as SVG artwork in `frontend/public/branding`, used in the application shell, authentication screen, favicon, and this README. It is covered by the repository's MIT license and needs no third-party attribution. See [branding guidance](docs/branding.md).
 
 ## Contributing, roadmap, and license
 
