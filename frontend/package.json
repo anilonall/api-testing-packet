@@ -12,30 +12,30 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@hookform/resolvers": "^5.9.1",
-    "@primeuix/themes": "^3.0.1",
-    "@tanstack/react-query": "^5.104.1",
+    "@hookform/resolvers": "^7.0.9",
+    "@primeuix/themes": "^3.1.1",
+    "@tanstack/react-query": "^5.108.4",
     "primeicons": "^8.0.2",
-    "primereact": "^11.2.0",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8",
-    "react-hook-form": "^7.89.0",
-    "react-router-dom": "^7.18.4",
-    "zod": "^3.25.76",
-    "zustand": "^5.0.15"
+    "primereact": "^11.2.3",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-hook-form": "^7.92.0",
+    "react-router-dom": "^7.18.7",
+    "zod": "^4.6.7",
+    "zustand": "^5.1.0"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/jest-dom": "^8.0.0",
     "@testing-library/react": "^16.3.3",
-    "@testing-library/user-event": "^14.6.7",
-    "@types/node": "^24.13.3",
-    "@types/react": "^19.2.18",
+    "@testing-library/user-event": "^14.6.13",
+    "@types/node": "^26.6.7",
+    "@types/react": "^19.3.1",
     "@types/react-dom": "^19.2.7",
-    "@vitejs/plugin-react": "^6.1.1",
-    "jsdom": "^30.1.1",
-    "oxlint": "^1.81.0",
-    "typescript": "~6.0.2",
-    "vite": "^8.3.0",
-    "vitest": "^5.0.3"
+    "@vitejs/plugin-react": "^6.3.0",
+    "jsdom": "^31.0.1",
+    "oxlint": "^1.95.0",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.1"
   }
 }
